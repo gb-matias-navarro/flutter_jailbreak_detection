@@ -26,22 +26,27 @@ apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 
 android {
-    compileSdk 34
-    namespace project.group
+    namespace "appmire.be.flutterjailbreakdetection"
 
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_17
-        targetCompatibility JavaVersion.VERSION_17
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
     }
+    
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_11
+    }
+
+    compileSdkVersion 36
 
     sourceSets {
         main.java.srcDirs += 'src/main/kotlin'
     }
     defaultConfig {
-        minSdk 17
+        minSdkVersion 17
     }
 }
 
 dependencies {
-    implementation 'com.github.scottyab:rootbeer:0.1.0'
+    implementation 'com.scottyab:rootbeer-lib:0.1.1'
 }
